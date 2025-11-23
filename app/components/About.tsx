@@ -14,15 +14,15 @@ const colors = {
 
 const About: React.FC = () => {
   return (
-    // h-screen: Tam ekran yüksekliği
-    // py-20: Üstten ve alttan boşluk
-    <div className={`h-screen flex flex-col justify-center py-20 bg-[${colors.background}]`}>
+    // DÜZELTME: h-screen yerine min-h-screen kullanılıyor
+    // Ayrıca üstten dolgu (pt-20) eklenerek Navbar'ın altından başlanması sağlanıyor.
+    <div className={`min-h-screen flex flex-col justify-center pt-20 pb-20 bg-[${colors.background}]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Başlık ve Slogan */}
         <header className="text-center mb-16">
           <h2 className="text-5xl font-extrabold text-white mb-3">
-            About <span className={`text-[${colors.primary}]`}>VisionDevStudio</span>
+            Bizim <span className={`text-[${colors.primary}]`}>Hakkımızda</span>
           </h2>
           <p className={`text-xl font-light text-[${colors.text}] max-w-3xl mx-auto`}>
             We are a team of dedicated developers and designers passionate about bringing innovative ideas to life through robust and intuitive software solutions.
@@ -37,14 +37,17 @@ const About: React.FC = () => {
             
             {/* 1. Paragraf */}
             <p className={`text-lg leading-relaxed text-[${colors.text}]`}>
-              <span className={`font-semibold text-[${colors.primary}]`}>Founded on the principles of excellence and innovation,</span> VisionDevStudio specializes in creating bespoke applications across all major platforms. Our agile approach ensures that we deliver high-quality software that aligns perfectly with your business goals and user needs. From initial concept to deployment and beyond, we are your trusted partner in digital transformation.
+              <span className={`font-semibold text-[${colors.primary}]`}>VisionDevStudio olarak, dijital dünyada fark yaratmak isteyen işletmeler ve bireyler için yenilikçi yazılım çözümleri üretiyoruz.</span> Her projenin kendine özgü ihtiyaçlarını derinlemesine anlayarak, mobil uygulamalardan kurumsal web sitelerine, özel masaüstü yazılımlarından modern e-ticaret platformlarına kadar geniş bir yelpazede hizmet sunmaktayız.
             </p>
             
             {/* 2. Paragraf */}
             <p className={`text-lg leading-relaxed text-[${colors.text}]`}>
-              Our commitment to staying ahead of technological trends means your projects are built with the latest frameworks and best practices, ensuring scalability, security, and performance. We believe in transparent communication and collaborative development, making your vision our priority.
+              <span className={`font-semibold text-[${colors.primary}]`}>Teknolojiyi sadece takip etmekle kalmıyor, aynı zamanda ona yön veriyoruz.</span> Alanında uzman ve dinamik ekibimiz, en güncel teknolojileri ve en iyi yazılım geliştirme pratiklerini kullanarak, müşterilerimize sadece bir yazılım değil, aynı zamanda geleceğe yönelik sürdürülebilir bir dijital çözüm sunar.
             </p>
-            
+             {/* 3. Paragraf */}
+              <p className={`text-lg leading-relaxed text-[${colors.text}]`}>
+              <span className={`font-semibold text-[${colors.primary}]`}>Güven ve şeffaflık, işimizin temelini oluşturur.</span>Projelerimizin her aşamasında müşterilerimizle yakın iletişimde kalarak, beklentileri aşan sonuçlar elde etmeyi hedefleriz. Vizyonunuzu gerçeğe dönüştürmek, iş süreçlerinizi optimize etmek ve dijitalde sağlam bir yer edinmek için VisionDevStudio olarak her zaman yanınızdayız.
+            </p>
           </div>
           
           {/* Sağ Taraf: Ofis Görseli */}
@@ -52,7 +55,7 @@ const About: React.FC = () => {
             {/* Görsel taslağınızdaki gibi modern bir ofis görseli yer tutucusu */}
             <div className={`w-full max-w-lg overflow-hidden rounded-xl shadow-2xl border border-[${colors.primary}]/30`}>
               <Image 
-                src="/ofis2.png" // Lütfen gerçek ofis görselinizle değiştirin
+                src="/about.png" // Lütfen gerçek ofis görselinizle değiştirin
                 alt="VisionDevStudio Modern Office Space" 
                 width={600}
                 height={450}

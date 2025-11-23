@@ -1,37 +1,54 @@
-import About from "./components/About";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Portfolio from "./components/Portfolio";
-import Services from "./components/Services";
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero'; 
+import About from './components/About';
+import Services from './components/Services';
+import Portfolio from './components/Portfolio'; 
+import Contact from './components/Contact'; 
+import Footer from './components/Footer'; 
 
-export default function Home() {
-  // Renkleri burada tanımlayabilir veya doğrudan Tailwind sınıf isimlerini kullanabilirsiniz.
+const Home: React.FC = () => {
   const colors = {
+    // DÜZELTME: Ana arka plan rengini #140A30 olarak güncelliyoruz.
+    background: '#140A30', // Ana arka plan (Koyu mor-mavi)
     primary: '#00BFFF',
-    background: '#0A0A1F',
     text: '#E0E0E0',
   };
+
   return (
-    // 'flex items-center justify-center' sınıflarını kaldırıyoruz.
-    // 'min-h-screen' ve koyu arka planı uyguluyoruz.
     <div className={`bg-[${colors.background}] min-h-screen text-[${colors.text}]`}>
       
-      {/* Navbar sabit (fixed) olduğu için en üste yerleşecektir */}
       <Navbar />
-     <section id="home"> 
+      
+      {/* 1. Home (Anasayfa/Hero) Bölümü */}
+      <section id="home"> 
         <Hero /> 
-      </section>
-        <section id="about">
+      </section> 
+
+      {/* 2. About Us Bölümü */}
+      <section id="about">
         <About /> 
       </section>
-       {/* 3. Services Bölümü - Tam ekranı kaplar */}
+      
+      {/* 3. Services Bölümü */}
       <section id="services">
-        <Services /> {/* Services bileşenini ekliyoruz */}
+        <Services /> 
       </section>
-       {/* 4. Portfolio Bölümü - Tam ekranı kaplar */}
-      <section id="portfolio">
-        <Portfolio /> {/* Portfolio bileşenini ekliyoruz */}
+      
+      {/* 4. Portfolio Bölümü */}
+      {/* <section id="portfolio">
+        <Portfolio /> 
+      </section> */}
+      
+      {/* 5. Contact Bölümü */}
+      <section id="contact">
+        <Contact /> 
       </section>
+      
+      {/* 6. Footer Bölümü - Sayfanın En Altı */}
+      <Footer /> 
     </div>
   );
 }
+
+export default Home;

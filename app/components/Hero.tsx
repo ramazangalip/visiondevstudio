@@ -23,21 +23,21 @@ const Hero: React.FC = () => {
 
   return (
     // YÜKSEKLİK DÜZELTMESİ: h-screen (Tam Viewport Yüksekliği) ve Navbar için pt-20
-    <div className={`h-screen flex items-center pt-20 bg-[${colors.secondaryBackground}]`}>
+    <div className={`h-screen flex items-center pt-40 bg-[${colors.secondaryBackground}]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
         
         {/* Sol Taraf: Metinler ve CTA */}
         <div className="md:order-1">
           {/* Ana Başlık */}
           <h1 className="text-6xl md:text-7xl font-extrabold leading-tight tracking-tight text-white mb-6">
-            Innovate.<br />
-            Develop.<br />
-            Succeed.
+            VİZYONUNUZU KODA<br />
+            DÖNÜŞTÜREN TEKNOLOJİ<br />
+            MİMARI.
           </h1>
           
           {/* Alt Metin */}
           <p className={`text-xl font-light text-[${colors.text}] max-w-lg mb-10`}>
-            Crafting cutting-edge mobile, web, and desktop applications that drive progress and deliver unparalleled user experiences.
+           İşletmenizin geleceğini inşa ediyoruz. Mobil, Web ve Masaüstü platformlarda, hedef kitlenize ulaşan, performansı yüksek ve kullanıcı dostu yazılım çözümleri için doğru adrestesiniz.
           </p>
           
           {/* CTA Butonu - Explore Our Solutions */}
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
                         hover:bg-[${colors.buttonHover}] transition duration-300 
                         shadow-lg shadow-[rgba(51,212,255,0.6)] hover:shadow-2xl hover:shadow-[rgba(0,191,255,0.7)]`}
           >
-            Explore Our Solutions
+            Çözümlerimizi Kesfedin
           </button>
         </div>
         

@@ -10,12 +10,11 @@ interface NavItem {
 
 // Navigasyon linkleri ve hedef bölümlerin ID'leri
 const navItems: NavItem[] = [
-  { name: 'Home', id: 'home' },
-  { name: 'About Us', id: 'about' },
-  { name: 'Services', id: 'services' },
-  { name: 'Portfolio', id: 'portfolio' },
-  { name: 'References', id: 'references' },
-  { name: 'Contact', id: 'contact' },
+  { name: 'Anasayfa', id: 'home' },
+  { name: 'Hakkımızda', id: 'about' },
+  { name: 'Paketlerimiz', id: 'services' },
+  { name: 'Portfolyomuz', id: 'portfolio' },
+  { name: 'İletişim', id: 'contact' },
 ];
 
 const Navbar: React.FC = () => {

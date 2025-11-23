@@ -14,15 +14,15 @@ const colors = {
 };
 
 // --- Örnek Proje Verileri (Aynı Kalır) ---
-type ProjectType = 'All' | 'Web' | 'Mobile' | 'Desktop';
+type ProjectType = 'Hepsi' | 'Web' | 'Mobil' | 'Masaüstü';
 
 interface Project {
   id: number;
   title: string;
   category: ProjectType;
   description: string;
-  imageUrl: string; // Proje görseli (placeholder)
-  tagColor: string; // Tailwind rengi (Mobil, Web, Masaüstü etiketi için)
+  imageUrl: string; 
+  tagColor: string; 
 }
 
 const allProjects: Project[] = [
@@ -37,7 +37,7 @@ const allProjects: Project[] = [
   {
     id: 2,
     title: "Secure Mobile Banking App",
-    category: 'Mobile',
+    category: 'Mobil',
     description: "Developed a secure and intuitive mobile banking application, offering seamless financial management on the go.",
     imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=Mobile+Banking",
     tagColor: 'text-green-400',
@@ -45,7 +45,7 @@ const allProjects: Project[] = [
   {
     id: 3,
     title: "Enterprise Data Dashboard",
-    category: 'Desktop',
+    category: 'Masaüstü',
     description: "Created a powerful desktop dashboard for real-time data visualization and analytics for a major enterprise client.",
     imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=Desktop+Dashboard",
     tagColor: 'text-yellow-400',
@@ -53,7 +53,7 @@ const allProjects: Project[] = [
   {
     id: 4,
     title: "Smart Home Control System",
-    category: 'Mobile',
+    category: 'Mobil',
     description: "Designed and implemented an intuitive mobile application to control smart home devices and automate routines.",
     imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=Smart+Home+App",
     tagColor: 'text-green-400',
@@ -69,7 +69,7 @@ const allProjects: Project[] = [
   {
     id: 6,
     title: "Warehouse Inventory System",
-    category: 'Desktop',
+    category: 'Masaüstü',
     description: "Built a comprehensive desktop application for efficient warehouse inventory management and logistics optimization.",
     imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=Inventory+Desktop",
     tagColor: 'text-yellow-400',
@@ -78,13 +78,13 @@ const allProjects: Project[] = [
 
 
 const Portfolio: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<ProjectType>('All');
+  const [activeFilter, setActiveFilter] = useState<ProjectType>('Hepsi');
 
-  const filteredProjects = activeFilter === 'All' 
+  const filteredProjects = activeFilter === 'Hepsi' 
     ? allProjects 
     : allProjects.filter(p => p.category === activeFilter);
     
-  const filterTabs: ProjectType[] = ['All', 'Web', 'Mobile', 'Desktop'];
+  const filterTabs: ProjectType[] = ['Hepsi', 'Web', 'Mobil', 'Masaüstü'];
 
   return (
     // min-h-screen ve üstten dolgu (pt-20) ile alt bölümlere geçişi güvenli hale getiriyoruz.
@@ -94,11 +94,9 @@ const Portfolio: React.FC = () => {
         {/* Başlık ve Slogan */}
         <header className="text-center mb-10">
           <h2 className="text-5xl font-extrabold text-white mb-3">
-            Our Recent Work
+            Yaptığımız Bazı Projeler
           </h2>
-          <p className={`text-xl font-light text-[${colors.text}] max-w-3xl mx-auto`}>
-            A showcase of our diverse projects, demonstrating our commitment to quality and innovative design.
-          </p>
+        
         </header>
         
         {/* Filtreleme Butonları */}
@@ -137,7 +135,7 @@ const Portfolio: React.FC = () => {
                 />
                 {/* Kategori Etiketi */}
                 <span className={`absolute top-3 left-3 px-3 py-1 text-sm font-semibold rounded-full bg-[${colors.darkSurface}] ${project.tagColor}`}>
-                  {project.category} Development
+                  {project.category} Geliştirme
                 </span>
               </div>
               
@@ -150,13 +148,7 @@ const Portfolio: React.FC = () => {
                   {project.description}
                 </p>
                 
-                {/* Detay Butonu/Link */}
-                <a 
-                  href="#" // Gerçek projede proje detay linki
-                  className={`mt-4 inline-flex items-center text-[${colors.primary}] hover:text-[${colors.primary}] font-semibold transition duration-300`}
-                >
-                  View Case Study <ExternalLink className="w-4 h-4 ml-2" />
-                </a>
+               
               </div>
             </div>
           ))}

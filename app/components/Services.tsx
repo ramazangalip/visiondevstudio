@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { Check } from 'lucide-react'; // Onay işareti için Lucide ikonunu kullanacağız
 
 // Ortak renk paleti (page.tsx'ten alınmıştır)
@@ -17,9 +16,9 @@ const colors = {
 
 // --- Paket Verileri (Aynı Kalır) ---
 const packagesData = {
-  mobile: {
+  Mobil: {
     title: "MOBİL UYGULAMA PAKETLERİ",
-    logo: "/logo.png", // Logoyu buraya ekleyin
+    
     cards: [
       {
         type: "Giriş",
@@ -59,9 +58,9 @@ const packagesData = {
       },
     ]
   },
-  web: {
+  Web: {
     title: "WEB SİTESİ PAKETLERİ",
-    logo: "/logo.png", // Logoyu buraya ekleyin
+    logo: "/logos.png", // Logoyu buraya ekleyin
     cards: [
       {
         type: "Giriş",
@@ -102,9 +101,9 @@ const packagesData = {
       },
     ]
   },
-  desktop: {
+  Masaüstü: {
     title: "MASAÜSTÜ UYGULAMA PAKETLERİ",
-    logo: "/logo.png", // Logoyu buraya ekleyin
+    
     cards: [
       {
         type: "Giriş",
@@ -146,10 +145,10 @@ const packagesData = {
   }
 };
 
-type PackageType = 'mobile' | 'web' | 'desktop';
+type PackageType = 'Mobil' | 'Web' | 'Masaüstü';
 
 const Services: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<PackageType>('mobile'); // Varsayılan olarak mobil aktif
+  const [activeTab, setActiveTab] = useState<PackageType>('Mobil'); 
 
   const currentPackage = packagesData[activeTab];
 
@@ -166,16 +165,7 @@ const Services: React.FC = () => {
     <div className={`min-h-screen flex flex-col justify-between pt-20 pb-20 bg-[${colors.background}] text-[${colors.text}]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
-        {/* Ortadaki Logo */}
-        <div className="flex justify-center mb-10 mt-10">
-            <Image 
-                src={currentPackage.logo} // Logoyu buraya ekleyin
-                alt="VisionDevStudio Logo" 
-                width={70} 
-                height={70} 
-                className="rounded-lg"
-            />
-        </div>
+       
 
         {/* Başlık */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-10">
@@ -191,7 +181,7 @@ const Services: React.FC = () => {
               className={`px-6 py-2 rounded-lg text-lg font-semibold transition duration-300
                           ${activeTab === key ? `bg-[${colors.primary}] text-white shadow-lg` : `bg-[${colors.surface}] text-[${colors.text}] hover:bg-[${colors.darkSurface}]`}`}
             >
-              {key.charAt(0).toUpperCase() + key.slice(1)} {key === 'mobile' ? 'Uygulama' : key === 'web' ? 'Sitesi' : 'Uygulama'}
+              {key.charAt(0).toUpperCase() + key.slice(1)} {key === 'Mobil' ? 'Uygulama' : key === 'Web' ? 'Sitesi' : 'Uygulama'}
             </button>
           ))}
         </div>
