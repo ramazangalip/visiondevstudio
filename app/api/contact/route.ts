@@ -32,7 +32,7 @@ export async function POST(request: Request) {
             from: RESEND_FROM_EMAIL, // Gönderici (Siz)
             to: [TO_EMAIL],         // Alıcı (Sizin gelen kutunuz)
             subject: `[VDS Contact] Yeni Mesaj: ${subject} (${name})`,
-            reply_to: email,         // Yanıt adresi (Müşterinin adresi)
+            replyTo: email,         // Yanıt adresi (Müşterinin adresi)
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #00BFFF; border-radius: 8px; background-color: #0A0A1F; color: #E0E0E0;">
                     <h2 style="color: #00BFFF; border-bottom: 2px solid #00BFFF; padding-bottom: 10px;">VisionDevStudio Yeni İletişim Formu</h2>
