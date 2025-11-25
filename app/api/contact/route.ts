@@ -5,9 +5,9 @@ import { Resend } from 'resend'; // Resend kütüphanesini import ediyoruz
 // UYARI: RESEND_API_KEY sunucu tarafında (backend) kullanılmalıdır.
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// DÜZELTME: Doğrulanmış gönderici adresiniz
-const RESEND_FROM_EMAIL = "no-reply@visiondevstudio.com.tr"; 
-// DÜZELTME: Hedef mail adresiniz
+// DÜZELTME: GÖNDEREN ADRESİNİ RESEND'İN DOĞRULANMIŞ TEST ADRESİNE ÇEVİRİYORUZ
+const RESEND_FROM_EMAIL = "onboarding@resend.dev"; 
+// Hedef mail adresini .com.tr olarak bırakıyoruz
 const TO_EMAIL = 'info@visiondevstudio.com.tr'; 
 
 
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     try {
         // MAİL GÖNDERİM İŞLEMİ
         const { data, error } = await resend.emails.send({
-            from: RESEND_FROM_EMAIL, // Gönderici (Siz)
+            from: RESEND_FROM_EMAIL, // Gönderici (Artık Resend'in adresi)
             to: [TO_EMAIL],         // Alıcı (Sizin gelen kutunuz)
             subject: `[VDS Contact] Yeni Mesaj: ${subject} (${name})`,
             replyTo: email,         // Yanıt adresi (Müşterinin adresi)
