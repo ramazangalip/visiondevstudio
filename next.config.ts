@@ -1,21 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
+    // API Routes'un çalışması için kritik
+    output: "standalone", 
 
-  reactStrictMode: true,
+    reactStrictMode: true,
 
-  images: {
-    unoptimized: true,  // ← Statik export için ZORUNLU
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "placehold.co",
-        port: "",
-        pathname: "/**",
-      },
-    ],
-  },
+    images: {
+        // unoptimized: true satırı KALDIRILDI
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "placehold.co",
+                port: "",
+                pathname: "/**",
+            },
+        ],
+    },
 };
 
 export default nextConfig;
