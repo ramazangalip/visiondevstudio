@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                         </div>
                         <p className="text-sm text-white/70 mb-4">Innovate. Develop. Succeed.</p>
                         <div className="flex space-x-3">
-                            <a href="#" aria-label="LinkedIn" className={`text-white/60 hover:text-[${colors.primary}] transition`}><Instagram className="w-5 h-5" /></a>
+                            <a href="https://www.instagram.com/visiondevstudio/" aria-label="Instangram" className={`text-white/60 hover:text-[${colors.primary}] transition`}><Instagram className="w-5 h-5" /></a>
                             
                             
                         </div>
