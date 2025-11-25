@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Twitter, Linkedin, Github, Dribbble, Facebook } from 'lucide-react';
+import { Twitter, Linkedin, Github, Dribbble, Facebook, Instagram } from 'lucide-react';
 
 // Ortak renk paleti
 const colors = {
@@ -24,10 +24,10 @@ const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
 
     const navItems = [
-        { name: 'Home', id: 'home' },
-        { name: 'About Us', id: 'about' },
-        { name: 'Services', id: 'services' },
-        { name: 'Portfolio', id: 'portfolio' },
+        { name: 'Anasayfa', id: 'home' },
+        { name: 'Hakkımızda', id: 'about' },
+        { name: 'Paketler', id: 'services' },
+        
         { name: 'Contact', id: 'contact' },
     ];
 
@@ -50,10 +50,9 @@ const Footer: React.FC = () => {
                         </div>
                         <p className="text-sm text-white/70 mb-4">Innovate. Develop. Succeed.</p>
                         <div className="flex space-x-3">
-                            <a href="#" aria-label="LinkedIn" className={`text-white/60 hover:text-[${colors.primary}] transition`}><Linkedin className="w-5 h-5" /></a>
-                            <a href="#" aria-label="GitHub" className={`text-white/60 hover:text-[${colors.primary}] transition`}><Github className="w-5 h-5" /></a>
-                            <a href="#" aria-label="Twitter" className={`text-white/60 hover:text-[${colors.primary}] transition`}><Twitter className="w-5 h-5" /></a>
-                            {/* Diğer sosyal medya ikonları eklenebilir */}
+                            <a href="#" aria-label="LinkedIn" className={`text-white/60 hover:text-[${colors.primary}] transition`}><Instagram className="w-5 h-5" /></a>
+                            
+                            
                         </div>
                     </div>
 
@@ -78,26 +77,25 @@ const Footer: React.FC = () => {
                     <div>
                         <h3 className="text-lg font-semibold text-white mb-4">Çözümlerimiz</h3>
                         <ul className="space-y-2 text-sm text-white/70">
-                            <li>Mobile App Development</li>
-                            <li>Web Application Development</li>
-                            <li>Desktop Software</li>
-                            <li>UX/UI Design</li>
+                            <li>Mobile Uygulama Geliştirme</li>
+                            <li>Web Sitesi Geliştirme</li>
+                            <li>Masaüstü Geliştirme</li>
                         </ul>
                     </div>
                     
                     {/* İletişim Bilgileri */}
                     <div className="col-span-2 md:col-span-1">
                         <h3 className="text-lg font-semibold text-white mb-4">Bize Ulaşın</h3>
-                        <p className="text-sm text-white/70">info@visiondevstudio.com</p>
-                        <p className="text-sm text-white/70">+90 555 123 45 67</p>
-                        <p className="text-sm text-white/70 mt-2">Istanbul, Turkey</p>
+                        <p className="text-sm text-white/70">info@visiondevstudio.com.tr</p>
+                        
+                        <p className="text-sm text-white/70 mt-2">Bingöl, Turkey</p>
                     </div>
 
                 </div>
                 
                 {/* Telif Hakkı */}
                 <div className="text-center text-sm text-white/50">
-                    &copy; {currentYear} VisionDevStudio. All rights reserved. | Developed with Next.js & Tailwind CSS.
+                    &copy; {currentYear} VisionDevStudio. Tüm Hakları Saklıdır | 
                 </div>
             </div>
         </footer>

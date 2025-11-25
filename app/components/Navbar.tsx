@@ -13,7 +13,7 @@ const navItems: NavItem[] = [
   { name: 'Anasayfa', id: 'home' },
   { name: 'Hakkımızda', id: 'about' },
   { name: 'Paketlerimiz', id: 'services' },
-  { name: 'Portfolyomuz', id: 'portfolio' },
+ 
   { name: 'İletişim', id: 'contact' },
 ];
 
