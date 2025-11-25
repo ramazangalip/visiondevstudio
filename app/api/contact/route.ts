@@ -8,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // DÜZELTME: GÖNDEREN ADRESİNİ RESEND'İN DOĞRULANMIŞ TEST ADRESİNE ÇEVİRİYORUZ
 const RESEND_FROM_EMAIL = "onboarding@resend.dev"; 
 // Hedef mail adresini .com.tr olarak bırakıyoruz
-const TO_EMAIL = 'ramazansaidgalip@gmail.com'; 
+const TO_EMAIL = 'info@visiondevstudio.com.tr'; 
 
 
 export async function POST(request: Request) {
