@@ -1,0 +1,14 @@
+[build]
+  # Netlify'a, Next.js uygulamasını oluşturmak için hangi komutu kullanacağını söylüyoruz.
+  command = "npm run build"
+  # Next.js'in statik dosyalarını nerede bulacağını söylüyoruz.
+  publish = ".next"
+
+# Fonksiyonların, Next.js çıktısının neresinde olduğunu Netlify'a açıkça belirtiyoruz.
+# Bu, 404 hatalarını engellemek için kritik öneme sahiptir.
+[functions]
+  directory = ".netlify/functions/" 
+
+# Next.js App Router'daki API Routes'ları (route.ts) Netlify Fonksiyonlarına dönüştüren eklenti.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
