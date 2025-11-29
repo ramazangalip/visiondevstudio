@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
                     {/* İletişim Bilgileri */}
                     <div className="col-span-2 md:col-span-1">
                         <h3 className="text-lg font-semibold text-white mb-4">Bize Ulaşın</h3>
-                        <p className="text-sm text-white/70">info@visiondevstudio.com.tr</p>
+                        <p className="text-sm text-white/70">ramazansaidgalip@gmail.com</p>
                         
                         <p className="text-sm text-white/70 mt-2">Bingöl, Turkey</p>
                     </div>

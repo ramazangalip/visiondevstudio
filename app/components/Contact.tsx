@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
               <div>
                 <p className="font-semibold">Email Adresimiz</p>
                 {/* DÜZELTME: Mailto ve gösterilen adresi .com.tr ile güncelliyoruz */}
-                <a href="mailto:info@visiondevstudio.com.tr" className={`text-sm text-[${colors.primary}] hover:text-white transition`}>info@visiondevstudio.com.tr</a>
+                <a href="mailto:info@visiondevstudio.com.tr" className={`text-sm text-[${colors.primary}] hover:text-white transition`}>ramazansaidgalip@gmail.com</a>
               </div>
             </div>
 
