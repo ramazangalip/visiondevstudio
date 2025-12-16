@@ -36,9 +36,9 @@ const Home: React.FC = () => {
       </section>
       
       {/* 4. Portfolio Bölümü */}
-      {/* <section id="portfolio">
+      <section id="portfolio">
         <Portfolio /> 
-      </section> */}
+      </section>
       
       {/* 5. Contact Bölümü */}
       <section id="contact">

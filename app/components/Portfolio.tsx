@@ -1,94 +1,47 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { ExternalLink } from 'lucide-react'; // Link ikonu için
+import { ExternalLink } from 'lucide-react';
 
-// Ortak renk paleti
+// Ortak renk paleti (ORİJİNAL TASARIM KORUNDU)
 const colors = {
-  primary: '#00BFFF',
-  background: '#140A30', // Ana arka plan
-  text: '#E0E0E0',
-  surface: '#1E143F', // Kartların arka planı (koyu)
-  darkSurface: '#120B2A',
+  primary: '#00BFFF', // Açık Mavi
+  background: '#140A30', // Ana arka plan (Koyu Mor/Mavi)
+  text: '#E0E0E0', // Açık Gri Metin
+  surface: '#1E143F', // Kartların arka planı (Daha az koyu mor)
+  darkSurface: '#120B2A', // Etiket arka planı
 };
 
-// --- Örnek Proje Verileri (Aynı Kalır) ---
-type ProjectType = 'Hepsi' | 'Web' | 'Mobil' | 'Masaüstü';
-
+// --- Tek Proje Verisi (Görsel Yolu Güncellendi) ---
 interface Project {
   id: number;
   title: string;
-  category: ProjectType;
+  category: 'Web'; 
   description: string;
-  imageUrl: string; 
+  imageUrl: string; // Yerel yol: /ararat.png
   tagColor: string; 
+  liveLink: string; 
 }
 
-const allProjects: Project[] = [
+const theOnlyWebProject: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform Redesign",
+    title: "Ararat Token",
     category: 'Web',
-    description: "Modernized a leading online retail platform, improving user experience and increasing conversion rates by 25%.",
-    imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=E-commerce+Web",
+    description: "Modern Tanıtım Sitesi, Blokzincir teknolojisi ve topluluk yönetimine odaklanmıştır.",
+   
+    imageUrl: "/ararat.png", 
     tagColor: 'text-blue-400',
-  },
-  {
-    id: 2,
-    title: "Secure Mobile Banking App",
-    category: 'Mobil',
-    description: "Developed a secure and intuitive mobile banking application, offering seamless financial management on the go.",
-    imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=Mobile+Banking",
-    tagColor: 'text-green-400',
-  },
-  {
-    id: 3,
-    title: "Enterprise Data Dashboard",
-    category: 'Masaüstü',
-    description: "Created a powerful desktop dashboard for real-time data visualization and analytics for a major enterprise client.",
-    imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=Desktop+Dashboard",
-    tagColor: 'text-yellow-400',
-  },
-  {
-    id: 4,
-    title: "Smart Home Control System",
-    category: 'Mobil',
-    description: "Designed and implemented an intuitive mobile application to control smart home devices and automate routines.",
-    imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=Smart+Home+App",
-    tagColor: 'text-green-400',
-  },
-  {
-    id: 5,
-    title: "Custom CRM Solution",
-    category: 'Web',
-    description: "Developed a bespoke CRM system to streamline customer interactions and sales processes for a growing startup.",
-    imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=CRM+Web+App",
-    tagColor: 'text-blue-400',
-  },
-  {
-    id: 6,
-    title: "Warehouse Inventory System",
-    category: 'Masaüstü',
-    description: "Built a comprehensive desktop application for efficient warehouse inventory management and logistics optimization.",
-    imageUrl: "https://placehold.co/600x400/1E143F/00BFFF?text=Inventory+Desktop",
-    tagColor: 'text-yellow-400',
+    liveLink: "https://www.ararattoken.com", 
   },
 ];
 
 
 const Portfolio: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<ProjectType>('Hepsi');
-
-  const filteredProjects = activeFilter === 'Hepsi' 
-    ? allProjects 
-    : allProjects.filter(p => p.category === activeFilter);
-    
-  const filterTabs: ProjectType[] = ['Hepsi', 'Web', 'Mobil', 'Masaüstü'];
 
   return (
-    // min-h-screen ve üstten dolgu (pt-20) ile alt bölümlere geçişi güvenli hale getiriyoruz.
-    <div className={`min-h-screen flex flex-col justify-center pt-20 pb-20 bg-[${colors.background}] text-[${colors.text}]`}>
+    <div className={`min-h-screen flex flex-col justify-center items-center py-20 bg-[${colors.background}] text-[${colors.text}]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Başlık ve Slogan */}
@@ -96,47 +49,30 @@ const Portfolio: React.FC = () => {
           <h2 className="text-5xl font-extrabold text-white mb-3">
             Yaptığımız Bazı Projeler
           </h2>
-        
         </header>
         
-        {/* Filtreleme Butonları */}
-        <div className="flex justify-center space-x-4 mb-12">
-          {filterTabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveFilter(tab)}
-              className={`px-6 py-2 rounded-lg text-lg font-semibold transition duration-300
-                          ${activeFilter === tab ? `bg-[${colors.primary}] text-white shadow-lg` : `bg-[${colors.surface}] text-[${colors.text}] hover:bg-[${colors.darkSurface}]`}`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
         {/* Proje Kartları */}
-        {/* max-h-[65vh] ve overflow-y-auto ile kartlar kaydırılabilir yapılır */}
-        {/* Not: Bu kaydırılabilir alan, Portföy içeriğinin ekranı çok fazla uzatmasını engeller. */}
-        <div className="grid md:grid-cols-3 gap-8 overflow-y-auto max-h-[65vh] pr-4"> 
-          {filteredProjects.map((project) => (
+        <div className="flex justify-center">
+          {theOnlyWebProject.map((project) => (
             <div 
               key={project.id} 
-              className={`relative rounded-xl shadow-2xl bg-[${colors.surface}] overflow-hidden 
+              className={`max-w-md relative rounded-xl shadow-2xl bg-[${colors.surface}] overflow-hidden 
                           transition duration-500 transform hover:scale-[1.03]`}
             >
+              
               {/* Proje Görsel Alanı */}
               <div className="h-48 relative overflow-hidden">
                 <Image 
                   src={project.imageUrl} 
                   alt={project.title} 
+                  // Yerel resim kullanırken width ve height belirtmek performansı artırır.
+                  // layout="fill" kullanıyorsanız, container'a height vermeyi unutmayın (yukarıda h-48 var).
                   layout="fill"
                   objectFit="cover"
-                  unoptimized={true} // SVG hatasını gidermek için
+                  // unoptimized'ı kaldırdım, çünkü yerel dosyalar için optimize edilmesi daha iyidir.
                   className="transition duration-500 opacity-90 hover:opacity-100"
                 />
-                {/* Kategori Etiketi */}
-                <span className={`absolute top-3 left-3 px-3 py-1 text-sm font-semibold rounded-full bg-[${colors.darkSurface}] ${project.tagColor}`}>
-                  {project.category} Geliştirme
-                </span>
+               
               </div>
               
               {/* Proje İçeriği */}
@@ -144,11 +80,20 @@ const Portfolio: React.FC = () => {
                 <h3 className={`text-2xl font-bold mb-2 text-[${colors.primary}]`}>
                   {project.title}
                 </h3>
-                <p className={`text-sm text-[${colors.text}] leading-relaxed`}>
+                <p className={`text-sm text-[${colors.text}] leading-relaxed mb-4`}>
                   {project.description}
                 </p>
                 
-               
+                {/* Canlı Proje Linki Butonu */}
+                 <a 
+                  href={project.liveLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center text-md font-semibold text-white 
+                              hover:text-[${colors.primary}] transition duration-300`}
+                >
+                  Canlı Siteyi Gör <ExternalLink className="w-4 h-4 ml-1" />
+                </a>
               </div>
             </div>
           ))}
