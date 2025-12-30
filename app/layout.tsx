@@ -3,8 +3,12 @@ import './globals.css';
 
 // Metadata (isteğe bağlı)
 export const metadata = {
-  title: 'VisionDevStudio',
-  description: 'Innovate. Develop. Succeed.',
+  title: 'Vision Dev Studio | Profesyonel Yazılım ve Dijital Çözümler',
+  description: 'Vizyonunuzu gerçeğe dönüştürüyoruz. Vision Dev Studio ile kurumsal web tasarım, mobil uygulama ve modern dijital çözümler.',
+  keywords: ['yazılım', 'web tasarım', 'mobil uygulama', 'dijital dönüşüm', 'vision dev studio'],
+  icons: {
+    icon: '/favicon.ico', // public klasöründeki ikon adıyla aynı olmalı
+  },
 };
 
 export default function RootLayout({
