@@ -25,7 +25,7 @@ const About: React.FC = () => {
             Bizim <span className={`text-[${colors.primary}]`}>Hakkımızda</span>
           </h2>
           <p className={`text-xl font-light text-[${colors.text}] max-w-3xl mx-auto`}>
-            We are a team of dedicated developers and designers passionate about bringing innovative ideas to life through robust and intuitive software solutions.
+            Modern web ve mobil teknolojilerle ölçeklenebilir, performans odaklı ve yüksek güvenlikli kurumsal yazılım çözümleri inşa ediyoruz.
           </p>
         </header>
 
@@ -37,16 +37,16 @@ const About: React.FC = () => {
             
             {/* 1. Paragraf */}
             <p className={`text-lg leading-relaxed text-[${colors.text}]`}>
-              <span className={`font-semibold text-[${colors.primary}]`}>VisionDevStudio olarak, dijital dünyada fark yaratmak isteyen işletmeler ve bireyler için yenilikçi yazılım çözümleri üretiyoruz.</span> Her projenin kendine özgü ihtiyaçlarını derinlemesine anlayarak, mobil uygulamalardan kurumsal web sitelerine, özel masaüstü yazılımlarından modern e-ticaret platformlarına kadar geniş bir yelpazede hizmet sunmaktayız.
+              <span className={`font-semibold text-[${colors.primary}]`}>VisionDevStudio olarak, dijital dönüşümde fark yaratmak isteyen işletmeler için terzi usulü yazılım çözümleri sunuyoruz.</span> Web ön yüzünde **React** ve **Next.js**, arka planda ise mimari gücüyle öne çıkan **Python Django** teknolojilerini kullanarak uçtan uca yüksek performanslı **kurumsal web sitesi tasarımları** ve özel yazılım altyapıları geliştiriyoruz.
             </p>
             
             {/* 2. Paragraf */}
             <p className={`text-lg leading-relaxed text-[${colors.text}]`}>
-              <span className={`font-semibold text-[${colors.primary}]`}>Teknolojiyi sadece takip etmekle kalmıyor, aynı zamanda ona yön veriyoruz.</span> Alanında uzman ve dinamik ekibimiz, en güncel teknolojileri ve en iyi yazılım geliştirme pratiklerini kullanarak, müşterilerimize sadece bir yazılım değil, aynı zamanda geleceğe yönelik sürdürülebilir bir dijital çözüm sunar.
+              <span className={`font-semibold text-[${colors.primary}]`}>Mobil dünyada sınırları kaldırıyoruz.</span> **Flutter** ve **React Native** teknolojilerimiz sayesinde hem iOS hem de Android platformlarında yerel (native) performanslı cross-platform mobil uygulamalar sunuyoruz. Sürdürülebilir mimari, şeffaf süreç yönetimi ve tam kapsamlı yazılım ajansı kimliğimizle projelerinize hız ve değer katıyoruz.
             </p>
              {/* 3. Paragraf */}
               <p className={`text-lg leading-relaxed text-[${colors.text}]`}>
-              <span className={`font-semibold text-[${colors.primary}]`}>Güven ve şeffaflık, işimizin temelini oluşturur.</span>Projelerimizin her aşamasında müşterilerimizle yakın iletişimde kalarak, beklentileri aşan sonuçlar elde etmeyi hedefleriz. Vizyonunuzu gerçeğe dönüştürmek, iş süreçlerinizi optimize etmek ve dijitalde sağlam bir yer edinmek için VisionDevStudio olarak her zaman yanınızdayız.
+              <span className={`font-semibold text-[${colors.primary}]`}>Güven, şeffaflık ve performans temel ilkemizdir.</span> Özel e-ticaret altyapılarından süreç optimizasyon otomasyonlarına kadar işletmenizin tüm dijital varlıklarını modern kod standartlarıyla üretiyor, sürdürülebilir başarı için yanınızda oluyoruz.
             </p>
           </div>
           

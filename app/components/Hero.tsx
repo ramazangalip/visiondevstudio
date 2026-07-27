@@ -28,33 +28,30 @@ const Hero: React.FC = () => {
         
         {/* Sol Taraf: Metinler ve CTA */}
         <div className="md:order-1">
-          {/* Ana Başlık */}
-          <h1 className="text-6xl md:text-7xl font-extrabold leading-tight tracking-tight text-white mb-6">
-            VİZYONUNUZU KODA<br />
-            DÖNÜŞTÜREN TEKNOLOJİ<br />
-            MİMARI.
+          {/* Ana Başlık (H1) */}
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-white mb-6">
+            Geleceğin Teknolojilerini İnşa Eden <span className={`text-[${colors.primary}]`}>Özel Yazılım Geliştirme Ajansı</span>
           </h1>
           
-          {/* Alt Metin */}
-          <p className={`text-xl font-light text-[${colors.text}] max-w-lg mb-10`}>
-           İşletmenizin geleceğini inşa ediyoruz. Mobil, Web ve Masaüstü platformlarda, hedef kitlenize ulaşan, performansı yüksek ve kullanıcı dostu yazılım çözümleri için doğru adrestesiniz.
+          {/* Alt Metin / Slogan */}
+          <p className={`text-xl font-light text-[${colors.text}] max-w-lg mb-10 leading-relaxed`}>
+            VisionDevStudio ile tanışın. Modern teknoloji mimarimiz ile iş süreçlerinizi dijitalleştiriyor; mobil, web ve masaüstü platformlarında sektörünüzde rekabet avantajı sağlayan kurumsal yazılım çözümleri sunuyoruz.
           </p>
           
-          {/* CTA Butonu - Explore Our Solutions */}
+          {/* CTA Butonu */}
           <button
-            onClick={scrollToServices} // Services ID'sine yönlendirir
-            // YENİ BUTON ARKA PLAN RENGİ: Daha açık mavi
-            className={`px-8 py-3 rounded-lg text-lg font-semibold text-white bg-[${colors.buttonBase}] 
+            onClick={scrollToServices}
+            className={`px-8 py-4 rounded-lg text-lg font-semibold text-white bg-[${colors.buttonBase}] 
                         hover:bg-[${colors.buttonHover}] transition duration-300 
                         shadow-lg shadow-[rgba(51,212,255,0.6)] hover:shadow-2xl hover:shadow-[rgba(0,191,255,0.7)]`}
           >
-            Çözümlerimizi Kesfedin
+            Çözümlerimizi Keşfedin & Teklif Alın
           </button>
         </div>
         
         {/* Sağ Taraf: Görsel */}
         <div className="md:order-2 h-full hidden md:flex items-center justify-center">
-          <Image src="/image2.png" alt='resim' width={600} height={600}></Image>
+          <Image src="/image2.png" alt="VisionDevStudio Özel Yazılım Geliştirme" width={600} height={600}></Image>
         </div>
 
       </div>

@@ -17,16 +17,16 @@ const colors = {
 // --- Paket Verileri (Aynı Kalır) ---
 const packagesData = {
   Mobil: {
-    title: "MOBİL UYGULAMA PAKETLERİ",
+    title: "MOBİL UYGULAMA GELİŞTİRME PAKETLERİ",
     
     cards: [
       {
         type: "Giriş",
         price: "5.000₺",
         features: [
-          "1 adet basit mobil uygulama",
-          "3 ekrana kadar tasarım",
-          "Temel backend bağlantısı",
+          "Flutter / React Native cross-platform altyapı",
+          "iOS ve Android uyumlu modern UI tasarım",
+          "Python Django REST API temel bağlantısı",
           "1 hafta teslim süresi",
           "7 gün teknik destek"
         ]
@@ -35,53 +35,53 @@ const packagesData = {
         type: "Profesyonel",
         price: "7.000₺",
         features: [
-          "Çok sayfalı uygulama",
-          "Kullanıcı giriş sistemi",
-          "Admin paneli",
-          "Veri kaydı & listeleme",
-          "2 hafta teslim",
-          "1 ay destek"
+          "Flutter / React Native çok sayfalı uygulama",
+          "Python Django güvenli kullanıcı yetkilendirme",
+          "Web tabanlı yönetim paneli (Admin)",
+          "Push bildirim & veri listeleme entegrasyonu",
+          "2 hafta teslim süresi",
+          "1 ay ücretsiz destek"
         ],
-        highlight: true // Bu kartı vurgulamak için
+        highlight: true
       },
       {
         type: "Üst",
         price: "10.000₺",
         features: [
-          "Gelişmiş kurumsal uygulama",
-          "Premium özellikler",
-          "Ödeme sistemi",
-          "Çoklu dil",
-          "Push bildirim",
-          "3 ay destek"
+          "Gelişmiş kurumsal cross-platform mobil uygulama",
+          "Python Django mimarisi ile yüksek performanslı backend",
+          "Ödeme sistemi & IAP entegrasyonu",
+          "Çoklu dil (i18n) & canlı veri senkronizasyonu",
+          "App Store & Google Play mağaza teslimi",
+          "3 ay profesyonel destek"
         ]
       },
     ]
   },
   Web: {
-    title: "WEB SİTESİ PAKETLERİ",
-    logo: "/logos.png", // Logoyu buraya ekleyin
+    title: "WEB GELİŞTİRME VE E-TİCARET PAKETLERİ",
+    logo: "/logos.png",
     cards: [
       {
         type: "Giriş",
         price: "5.000₺",
         features: [
-          "1-3 sayfa kurumsal mini web sitesi",
-          "Mobil uyumlu basit tasarım",
-          "Hız optimizasyonu",
+          "React / Next.js ile kurumsal mini web sitesi",
+          "Performans odaklı web tasarımı & SEO altyapısı",
+          "Mobil uyumlu (Responsive) hızlı arayüz",
           "1 haftalık destek",
-          "Hosting & domain yönlendirme"
+          "Hosting & Domain yönlendirme danışmanlığı"
         ]
       },
       {
         type: "Profesyonel",
         price: "8.000₺",
         features: [
-          "Yönetim panelli web uygulaması (Admin)",
-          "Kullanıcı kayıt sistemi",
-          "Dinamik içerik (Blog, Ürün, Form, vb.)",
-          "API entegrasyonu",
-          "SEO temel ayarları",
+          "Next.js / React ön yüz + Python Django backend",
+          "Özel web tabanlı yönetim paneli geliştirme",
+          "Dinamik içerik yönetimi (Blog, Hizmetler, Formlar)",
+          "Gelişmiş SEO & arama motoru optimizasyonu",
+          "Python Django API entegrasyonu",
           "1 ay teknik destek"
         ],
         highlight: true
@@ -90,29 +90,28 @@ const packagesData = {
         type: "Üst",
         price: "10.000₺",
         features: [
-          "Gelişmiş web uygulaması",
-          "Ödeme sistemi",
-          "Çoklu dil (i18n)",
-          "Dashboard + grafikler",
-          "Gerçek zamanlı veri (WebSocket/Firebase)",
-          "Kurumsal premium tasarım",
-          "3 ay destek"
+          "Özel e-ticaret altyapısı hazırlatma & web yazılımı",
+          "Next.js SSG/SSR + Python Django mikroservis backend",
+          "Ödeme sistemleri & sanal pos entegrasyonları",
+          "Çoklu dil & Dashboard analitik grafikleri",
+          "Yüksek trafik uyumlu kurumsal premium tasarım",
+          "3 ay profesyonel destek"
         ]
       },
     ]
   },
   Masaüstü: {
-    title: "MASAÜSTÜ UYGULAMA PAKETLERİ",
+    title: "MASAÜSTÜ VE İŞ OTOMASYONU PAKETLERİ",
     
     cards: [
       {
         type: "Giriş",
         price: "4.500₺",
         features: [
-          "Basit masaüstü arayüz",
-          "Veri okuma / yazma işlemleri",
-          "Temel form ekranları",
-          "Offline çalışma",
+          "Özel masaüstü yazılımı geliştirme",
+          "Veri okuma / yazma & temel form ekranları",
+          "Offline çalışma & yerel veritabanı desteği",
+          "İş süreçleri optimizasyonu",
           "1 hafta destek"
         ]
       },
@@ -120,12 +119,11 @@ const packagesData = {
         type: "Profesyonel",
         price: "7.500₺",
         features: [
-          "Çok ekranlı tam masaüstü uygulama",
-          "Veritabanı desteği (SQLite / PostgreSQL)",
-          "Kullanıcı giriş sistemi",
-          "Raporlama modülleri",
-          "API üzerinden veri alışverişi",
-          "1 ay destek"
+          "İşletmeler için otomasyon yazılımları",
+          "C# / .NET / Python masaüstü uygulama çözümleri",
+          "Python Django web/cloud veritabanı senkronizasyonu",
+          "Kullanıcı roller ve gelişmiş raporlama modülü",
+          "1 ay teknik destek"
         ],
         highlight: true
       },
@@ -133,12 +131,11 @@ const packagesData = {
         type: "Üst",
         price: "11.000₺",
         features: [
-          "Kurumsal seviye masaüstü yazılım",
-          "Gerçek zamanlı canlı veri (UPS, IOT cihaz, sensör vb.)",
-          "Grafik + dashboard",
-          "Çoklu kullanıcı rol yönetimi",
-          "Veritabanı desteği (SQLite / PostgreSQL)",
-          "3 ay profesyonel destek"
+          "Masaüstü ERP / CRM yazılımı yaptırma",
+          "Gerçek zamanlı canlı veri & IoT cihaz entegrasyonu",
+          "Grafik + Yönetici Dashboard paneli",
+          "Departmanlar arası tam süreç optimizasyonu",
+          "3 ay profesyonel teknik destek"
         ]
       }
     ]

@@ -29,7 +29,7 @@ const theOnlyWebProject: Project[] = [
     id: 1,
     title: "Ararat Token",
     category: 'Web',
-    description: "Modern Tanıtım Sitesi, Blokzincir teknolojisi ve topluluk yönetimine odaklanmıştır.",
+    description: "Next.js & React altyapısıyla geliştirilen performans odaklı kurumsal web sitesi ve blokzincir tanıtım platformu.",
    
     imageUrl: "/ararat.png", 
     tagColor: 'text-blue-400',

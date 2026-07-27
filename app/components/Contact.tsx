@@ -69,120 +69,180 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div 
-        id="contact"
-        // DÜZELTME: min-h-screen ve pt-20 ile Navbar'ın altından başlama garantisi
-        className={`min-h-screen flex flex-col justify-center pt-20 pb-20 bg-[${colors.background}] text-[${colors.text}]`}
+    <section 
+      id="contact"
+      className="py-24 md:py-32 bg-[#140A30] text-[#E0E0E0] relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <header className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold text-white mb-3">
-            Bizimle <span className={`text-[${colors.primary}]`}>İletişim Kurun</span>
+      {/* Arka plan parlama efekti */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00BFFF]/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Başlık Bölümü */}
+        <header className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            Bizimle <span className="text-[#00BFFF] drop-shadow-[0_0_15px_rgba(0,191,255,0.4)]">İletişim Kurun</span>
           </h2>
-          <p className={`text-xl font-light text-[${colors.text}] max-w-3xl mx-auto`}>
-            Projenizi hayata geçirmek için hazırsanız veya herhangi bir sorunuz varsa, bize ulaşın.
+          <p className="text-lg md:text-xl font-light text-[#E0E0E0]/80 max-w-2xl mx-auto leading-relaxed">
+            İşletmeniz için özel yazılım, mobil uygulama veya kurumsal web projenizi hayata geçirmek için hemen bizimle iletişime geçin.
           </p>
         </header>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Ana Izgara Yapısı (Kartlar Arası Rahat Mesafe) */}
+        <div className="grid lg:grid-cols-3 gap-10 items-start">
           
-          {/* İletişim Bilgileri (Sol Sütun) */}
-          <div className={`space-y-6 p-6 rounded-xl shadow-2xl bg-[${colors.surface}]`}>
-            <h3 className="text-2xl font-bold text-white border-b border-white/10 pb-3 mb-4">İletişim Bilgileri</h3>
+          {/* İletişim Bilgileri Kartı (Sol) */}
+          <div className="lg:col-span-1 bg-[#1E143F] border border-[#00BFFF]/20 rounded-2xl p-8 shadow-2xl space-y-8 backdrop-blur-sm">
+            <h3 className="text-2xl font-bold text-white border-b border-white/10 pb-4">
+              İletişim Bilgileri
+            </h3>
             
-            {/* E-posta */}
-            <div className="flex items-start space-x-4">
-              <Mail className={`w-6 h-6 text-[${colors.primary}] flex-shrink-0 mt-1`} />
-              <div>
-                <p className="font-semibold">Email Adresimiz</p>
-                {/* DÜZELTME: Mailto ve gösterilen adresi .com.tr ile güncelliyoruz */}
-                <a href="mailto:info@visiondevstudio.com.tr" className={`text-sm text-[${colors.primary}] hover:text-white transition`}>ramazansaidgalip@gmail.com</a>
+            <div className="space-y-6">
+              {/* E-posta */}
+              <div className="flex items-start space-x-4 p-3 rounded-xl bg-[#120B2A]/60 border border-white/5 transition hover:border-[#00BFFF]/40">
+                <div className="p-3 rounded-lg bg-[#00BFFF]/10 text-[#00BFFF]">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-white/50 font-semibold mb-1">Email Adresimiz</p>
+                  <a 
+                    href="mailto:ramazansaidgalip@gmail.com" 
+                    className="text-sm md:text-base font-medium text-[#33D4FF] hover:text-white transition break-all"
+                  >
+                    ramazansaidgalip@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Konum */}
+              <div className="flex items-start space-x-4 p-3 rounded-xl bg-[#120B2A]/60 border border-white/5 transition hover:border-[#00BFFF]/40">
+                <div className="p-3 rounded-lg bg-[#00BFFF]/10 text-[#00BFFF]">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-white/50 font-semibold mb-1">Lokasyon</p>
+                  <p className="text-sm md:text-base font-medium text-white">Bingöl, Türkiye</p>
+                </div>
               </div>
             </div>
 
-           
-            
-            {/* Adres */}
-            <div className="flex items-start space-x-4">
-              <MapPin className={`w-6 h-6 text-[${colors.primary}] flex-shrink-0 mt-1`} />
-              <div>
-                <p className="font-semibold">Ofis Adresi</p>
-                <p className="text-sm">Bingöl, Turkiye</p>
-              </div>
+            {/* Bilgi Rozeti */}
+            <div className="pt-4 border-t border-white/10">
+              <p className="text-xs text-white/60 leading-relaxed">
+                ⚡ Proje talepleriniz için aynı gün içerisinde teknik ekibimiz tarafından dönüş yapılmaktadır.
+              </p>
             </div>
           </div>
           
-          {/* İletişim Formu (Sağ İki Sütun) */}
-          <div className="md:col-span-2 p-8 rounded-xl shadow-2xl bg-[${colors.surface}]">
-            <h3 className="text-3xl font-bold text-white mb-6">Mesajınızı Yazın</h3>
+          {/* İletişim Formu Kartı (Sağ İki Sütun) */}
+          <div className="lg:col-span-2 bg-[#1E143F] border border-[#00BFFF]/20 rounded-2xl p-8 md:p-10 shadow-2xl backdrop-blur-sm">
+            <div className="mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                Mesajınızı Gönderin
+              </h3>
+              <p className="text-sm text-[#E0E0E0]/70">
+                Aşağıdaki formu doldurarak projeniz hakkında detaylı bilgi verebilirsiniz.
+              </p>
+            </div>
 
-            {/* Status Message */}
+            {/* Status Mesajı */}
             {status !== 'idle' && (
-              <div className={`p-4 mb-4 rounded-lg text-white ${status === 'success' ? 'bg-green-600' : 'bg-red-600'}`}>
-                {status === 'success' ? 'Mesajınız başarıyla gönderildi!' : status}
+              <div className={`p-4 mb-6 rounded-xl font-medium text-sm transition-all duration-300 ${
+                status === 'success' 
+                  ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-500/30' 
+                  : 'bg-rose-950/80 text-rose-300 border border-rose-500/30'
+              }`}>
+                {status === 'success' ? '✅ Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağız.' : status}
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
+                {/* Ad Soyad */}
+                <div className="space-y-2">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-white/70">
+                    Adınız & Soyadınız
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Ahmet Yılmaz"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#120B2A] border border-white/10 text-white placeholder-white/30 focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20 outline-none transition duration-200"
+                  />
+                </div>
+
+                {/* E-posta */}
+                <div className="space-y-2">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-white/70">
+                    E-posta Adresiniz
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="ornek@sirket.com"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#120B2A] border border-white/10 text-white placeholder-white/30 focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20 outline-none transition duration-200"
+                  />
+                </div>
+              </div>
+
+              {/* Konu */}
+              <div className="space-y-2">
+                <label className="text-xs font-semibold uppercase tracking-wider text-white/70">
+                  Proje Konusu
+                </label>
                 <input
                   type="text"
-                  name="name"
-                  placeholder="İsim"
+                  name="subject"
+                  placeholder="Örn: Özel Mobil Uygulama & Web Projesi"
                   required
-                  value={formData.name}
+                  value={formData.subject}
                   onChange={handleChange}
-                  className={`w-full p-3 rounded-lg bg-[${colors.darkSurface}] border border-transparent focus:border-[${colors.primary}] outline-none text-[${colors.text}] transition`}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`w-full p-3 rounded-lg bg-[${colors.darkSurface}] border border-transparent focus:border-[${colors.primary}] outline-none text-[${colors.text}] transition`}
+                  className="w-full px-4 py-3.5 rounded-xl bg-[#120B2A] border border-white/10 text-white placeholder-white/30 focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20 outline-none transition duration-200"
                 />
               </div>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Konu"
-                required
-                value={formData.subject}
-                onChange={handleChange}
-                className={`w-full p-3 rounded-lg bg-[${colors.darkSurface}] border border-transparent focus:border-[${colors.primary}] outline-none text-[${colors.text}] transition`}
-              />
-              <textarea
-                name="message"
-                placeholder="Mesajınız"
-                rows={5}
-                required
-                value={formData.message}
-                onChange={handleChange}
-                className={`w-full p-3 rounded-lg bg-[${colors.darkSurface}] border border-transparent focus:border-[${colors.primary}] outline-none text-[${colors.text}] resize-none transition`}
-              />
+
+              {/* Mesaj */}
+              <div className="space-y-2">
+                <label className="text-xs font-semibold uppercase tracking-wider text-white/70">
+                  Mesajınız
+                </label>
+                <textarea
+                  name="message"
+                  placeholder="Projenizin detaylarını ve beklentilerinizi buraya yazabilirsiniz..."
+                  rows={5}
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3.5 rounded-xl bg-[#120B2A] border border-white/10 text-white placeholder-white/30 focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20 outline-none resize-none transition duration-200"
+                />
+              </div>
               
+              {/* Gönder Butonu */}
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full md:w-auto px-8 py-3 rounded-lg text-lg font-semibold text-white bg-[${colors.buttonBase}] 
-                            hover:bg-[${colors.buttonHover}] transition duration-300 
-                            shadow-lg shadow-[rgba(51,212,255,0.6)] disabled:opacity-50 flex items-center justify-center`}
+                className="w-full md:w-auto px-10 py-4 rounded-xl text-base font-bold text-white bg-[#33D4FF] hover:bg-[#00BFFF] active:scale-95 transition-all duration-300 shadow-lg shadow-[rgba(51,212,255,0.3)] hover:shadow-xl hover:shadow-[rgba(0,191,255,0.5)] disabled:opacity-50 flex items-center justify-center cursor-pointer"
               >
                 {loading ? (
                   <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                 ) : (
                   <Send className="w-5 h-5 mr-2" />
                 )}
-                {loading ? 'Mesaj Gönderiliyor...' : 'Mesaj Gönder'}
+                {loading ? 'Gönderiliyor...' : 'Teklif Al & Gönder'}
               </button>
             </form>
           </div>
+
         </div>
 
       </div>
-    </div>
+    </section>
   );
 };
 
