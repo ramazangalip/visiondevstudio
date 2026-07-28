@@ -33,7 +33,7 @@ const theOnlyWebProject: Project[] = [
    
     imageUrl: "/ararat.png", 
     tagColor: 'text-blue-400',
-    liveLink: "https://www.ararattoken.com", 
+    liveLink: "https://ararattoken.com/", 
   },
 ];
 
