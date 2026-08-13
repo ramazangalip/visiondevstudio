@@ -35,6 +35,16 @@ const theOnlyWebProject: Project[] = [
     tagColor: 'text-blue-400',
     liveLink: "https://ararattoken.com/", 
   },
+  {
+    id: 1,
+    title: "Mavimor Güzellik Merkezi",
+    category: 'Web',
+    description: "Next.js & React altyapısıyla geliştirilen performans odaklı kurumsal web sitesi ve blokzincir tanıtım platformu.",
+   
+    imageUrl: "/mavimor.png", 
+    tagColor: 'text-blue-400',
+    liveLink: "https://mavimorguzelliksalonu.com.tr/", 
+  },
 ];
 
 
