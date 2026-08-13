@@ -2,115 +2,154 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Globe, Sparkles } from 'lucide-react';
 
-// Ortak renk paleti (ORİJİNAL TASARIM KORUNDU)
-const colors = {
-  primary: '#00BFFF', // Açık Mavi
-  background: '#140A30', // Ana arka plan (Koyu Mor/Mavi)
-  text: '#E0E0E0', // Açık Gri Metin
-  surface: '#1E143F', // Kartların arka planı (Daha az koyu mor)
-  darkSurface: '#120B2A', // Etiket arka planı
-};
-
-// --- Tek Proje Verisi (Görsel Yolu Güncellendi) ---
 interface Project {
   id: number;
   title: string;
-  category: 'Web'; 
+  category: string;
   description: string;
-  imageUrl: string; // Yerel yol: /ararat.png
-  tagColor: string; 
-  liveLink: string; 
+  imageUrl: string;
+  liveLink: string;
+  tags: string[];
 }
 
-const theOnlyWebProject: Project[] = [
+const projectsList: Project[] = [
   {
     id: 1,
     title: "Ararat Token",
-    category: 'Web',
-    description: "Next.js & React altyapısıyla geliştirilen performans odaklı kurumsal web sitesi ve blokzincir tanıtım platformu.",
-   
-    imageUrl: "/ararat.png", 
-    tagColor: 'text-blue-400',
-    liveLink: "https://ararattoken.com/", 
+    category: "Web & Blokzincir",
+    description: "Next.js & React altyapısıyla geliştirilen, ışık hızında çalışan performans odaklı kurumsal web sitesi ve blokzincir tanıtım platformu.",
+    imageUrl: "/ararat.png",
+    liveLink: "https://ararattoken.com/",
+    tags: ["Next.js", "React", "Web3", "SEO"],
   },
   {
-    id: 1,
+    id: 2,
     title: "Mavimor Güzellik Merkezi",
-    category: 'Web',
-    description: "Next.js & React altyapısıyla geliştirilen performans odaklı kurumsal web sitesi ve blokzincir tanıtım platformu.",
-   
-    imageUrl: "/mavimor.png", 
-    tagColor: 'text-blue-400',
-    liveLink: "https://mavimorguzelliksalonu.com.tr/", 
+    category: "Kurumsal Web",
+    description: "Next.js & React teknolojileri ile hazırlanan, Bingöl Lazer Epilasyon ve Cilt Bakımı kurumsal hizmet ve randevu platformu.",
+    imageUrl: "/mavimor.png",
+    liveLink: "https://mavimorguzelliksalonu.com.tr/",
+    tags: ["Next.js", "React", "Kurumsal", "UI/UX"],
   },
 ];
 
-
 const Portfolio: React.FC = () => {
-
   return (
-    <div className={`min-h-screen flex flex-col justify-center items-center py-20 bg-[${colors.background}] text-[${colors.text}]`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section id="portfolio" className="py-20 sm:py-32 bg-[#140A30] text-[#E0E0E0] relative overflow-hidden">
+      {/* Arka Plan Glow Efekti */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-[#00BFFF]/5 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Başlık ve Slogan */}
-        <header className="text-center mb-10">
-          <h2 className="text-5xl font-extrabold text-white mb-3">
-            Yaptığımız Bazı Projeler
+        {/* Başlık Bölümü */}
+        <header className="text-center mb-14 sm:mb-20 space-y-4">
+          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#00BFFF]/10 border border-[#00BFFF]/30 text-[#00BFFF] text-xs font-semibold uppercase tracking-widest">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Seçkin Çalışmalarımız</span>
+          </div>
+          
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Yaptığımız <span className="text-[#00BFFF] drop-shadow-[0_0_20px_rgba(0,191,255,0.4)]">Başarılı Projeler</span>
           </h2>
+          
+          <p className="text-base sm:text-xl font-light text-[#E0E0E0]/80 max-w-2xl mx-auto leading-relaxed">
+            Modern mühendislik standartları, estetik tasarım dili ve yüksek performanslı mimariler ile hayata geçirdiğimiz referans projelerimiz.
+          </p>
         </header>
         
-        {/* Proje Kartları */}
-        <div className="flex justify-center">
-          {theOnlyWebProject.map((project) => (
-            <div 
+        {/* Tüm Ekran Boyutlarına %100 Uyumlu Proje Izgarası */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
+          {projectsList.map((project) => (
+            <article 
               key={project.id} 
-              className={`max-w-md relative rounded-xl shadow-2xl bg-[${colors.surface}] overflow-hidden 
-                          transition duration-500 transform hover:scale-[1.03]`}
+              className="group relative bg-[#1E143F]/90 backdrop-blur-md rounded-2xl border border-[#00BFFF]/20 hover:border-[#00BFFF] transition-all duration-500 shadow-2xl hover:shadow-[0_0_35px_rgba(0,191,255,0.25)] flex flex-col justify-between overflow-hidden transform hover:-translate-y-1.5 h-full"
             >
               
-              {/* Proje Görsel Alanı */}
-              <div className="h-48 relative overflow-hidden">
-                <Image 
-                  src={project.imageUrl} 
-                  alt={project.title} 
-                  // Yerel resim kullanırken width ve height belirtmek performansı artırır.
-                  // layout="fill" kullanıyorsanız, container'a height vermeyi unutmayın (yukarıda h-48 var).
-                  layout="fill"
-                  objectFit="cover"
-                  // unoptimized'ı kaldırdım, çünkü yerel dosyalar için optimize edilmesi daha iyidir.
-                  className="transition duration-500 opacity-90 hover:opacity-100"
-                />
-               
+              <div>
+                {/* Tarayıcı Çerçevesi Mockup (Browser Window Display) */}
+                <div className="bg-[#120B2A] border-b border-white/10 px-3.5 py-2.5 flex items-center justify-between gap-2">
+                  <div className="flex items-center space-x-1.5 shrink-0">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
+                  </div>
+
+                  {/* Adres Çubuğu Simülasyonu */}
+                  <div className="flex-grow max-w-[220px] sm:max-w-[280px] px-3 py-1 rounded-md bg-[#1E143F] text-[11px] text-white/60 flex items-center justify-center space-x-1.5 truncate border border-white/5">
+                    <Globe className="w-3 h-3 text-[#00BFFF] shrink-0" />
+                    <span className="truncate font-mono">{project.liveLink.replace("https://", "").replace(/\/$/, "")}</span>
+                  </div>
+
+                  <div className="shrink-0">
+                    <span className="text-[10px] uppercase font-bold text-[#00BFFF] bg-[#00BFFF]/10 border border-[#00BFFF]/20 px-2 py-0.5 rounded">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Görsel Alanı: Tam Sığan Kırpılmayan Ekran Görüntüsü */}
+                <div className="relative w-full aspect-[16/9] sm:aspect-[16/10] bg-[#0A061C] p-2 sm:p-3 overflow-hidden flex items-center justify-center">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden border border-white/10 shadow-inner">
+                    <Image 
+                      src={project.imageUrl} 
+                      alt={project.title} 
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-contain sm:object-cover sm:object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  </div>
+                </div>
               </div>
               
-              {/* Proje İçeriği */}
-              <div className="p-5">
-                <h3 className={`text-2xl font-bold mb-2 text-[${colors.primary}]`}>
-                  {project.title}
-                </h3>
-                <p className={`text-sm text-[${colors.text}] leading-relaxed mb-4`}>
-                  {project.description}
-                </p>
+              {/* İçerik Bilgileri */}
+              <div className="p-6 sm:p-7 flex flex-col justify-between space-y-6 flex-grow">
+                <div className="space-y-3">
+                  {/* Rozetler (Tags) */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, idx) => (
+                      <span 
+                        key={idx} 
+                        className="text-xs font-semibold px-3 py-1 rounded-full bg-[#120B2A] text-[#33D4FF] border border-[#00BFFF]/30"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Başlık */}
+                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#00BFFF] transition-colors duration-300">
+                    {project.title}
+                  </h3>
+
+                  {/* Açıklama */}
+                  <p className="text-sm text-[#E0E0E0]/80 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
                 
-                {/* Canlı Proje Linki Butonu */}
-                 <a 
-                  href={project.liveLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center text-md font-semibold text-white 
-                              hover:text-[${colors.primary}] transition duration-300`}
-                >
-                  Canlı Siteyi Gör <ExternalLink className="w-4 h-4 ml-1" />
-                </a>
+                {/* Canlı Site Butonu */}
+                <div className="pt-2">
+                  <a 
+                    href={project.liveLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-full px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-[#120B2A] border border-[#00BFFF]/40 hover:bg-[#33D4FF] hover:text-white hover:border-[#33D4FF] active:scale-95 transition-all duration-300 shadow-md group-hover:shadow-[0_0_20px_rgba(51,212,255,0.4)]"
+                  >
+                    <span>Canlı Sitede İnceleyin</span>
+                    <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
+
               </div>
-            </div>
+
+            </article>
           ))}
         </div>
         
       </div>
-    </div>
+    </section>
   );
 };
 
