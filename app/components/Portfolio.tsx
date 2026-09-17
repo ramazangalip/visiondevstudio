@@ -33,6 +33,15 @@ const projectsList: Project[] = [
     liveLink: "https://mavimorguzelliksalonu.com.tr/",
     tags: ["Next.js", "React", "Kurumsal", "UI/UX"],
   },
+  {
+    id: 3,
+    title: "Güner Yazılım",
+    category: "Kurumsal Web",
+    description: "Next.js & React altyapısıyla hazırlanan, Bingöl'de web tasarım, mobil uygulama ve yazılım çözümleri sunan kurumsal platform.",
+    imageUrl: "/guner.png",
+    liveLink: "https://guneryazilim.com.tr/",
+    tags: ["Next.js", "React", "Yazılım", "SEO"],
+  },
 ];
 
 const Portfolio: React.FC = () => {
@@ -60,7 +69,7 @@ const Portfolio: React.FC = () => {
         </header>
         
         {/* Tüm Ekran Boyutlarına %100 Uyumlu Proje Izgarası */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projectsList.map((project) => (
             <article 
               key={project.id} 
