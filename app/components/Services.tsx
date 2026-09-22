@@ -8,123 +8,122 @@ const packagesData = {
     title: "MOBİL UYGULAMA GELİŞTİRME PAKETLERİ",
     cards: [
       {
-        type: "Giriş",
+        type: "Başlangıç",
         price: "5.000₺",
         features: [
-          "Flutter / React Native cross-platform altyapı",
-          "iOS ve Android uyumlu modern UI tasarım",
-          "Python Django REST API temel bağlantısı",
-          "1 hafta teslim süresi",
-          "7 gün teknik destek"
+          "2-3 Ekranlı Modern Arayüz ",
+          "Dijital Menü & Hizmet Tanıtımı",
+          "Ücretsiz Whatsapp Bağlantısı",
+          "Konum & Çalışma Saatleri Modülü",
+          "Hızlı APK Teslimi & Kurulum"
         ]
       },
       {
         type: "Profesyonel",
-        price: "7.000₺",
+        price: "9.500₺",
         features: [
-          "Flutter / React Native çok sayfalı uygulama",
-          "Python Django güvenli kullanıcı yetkilendirme",
-          "Web tabanlı yönetim paneli (Admin)",
-          "Push bildirim & veri listeleme entegrasyonu",
-          "2 hafta teslim süresi",
-          "1 ay ücretsiz destek"
+          "Dinamik Randevu Motoru (Usta/Saat)",
+          "5 Damgalı Dijital Sadakat Kartı",
+          "Tek Tıkla Whatsapp Bildirim Şablonu",
+          "Berber & Kuaförlere Özel Akış",
+          "Modern Lüks Koyu Tema"
+         
         ],
         highlight: true
       },
       {
-        type: "Üst",
-        price: "10.000₺",
+        type: "Gelişmiş",
+        price: "15.000₺",
         features: [
-          "Gelişmiş kurumsal cross-platform mobil uygulama",
-          "Python Django mimarisi ile yüksek performanslı backend",
-          "Ödeme sistemi & IAP entegrasyonu",
-          "Çoklu dil (i18n) & canlı veri senkronizasyonu",
-          "App Store & Google Play mağaza teslimi",
-          "3 ay profesyonel destek"
+          "Çoklu Personel / Usta Yönetimi",
+          "Çalışma Saatleri & Mola Ayarları",
+          "Uygulama İçi Fiyat Güncelleme",
+          "Randevu Geçmişi & Müşteri Listesi",
+          "Öncelikli Destek & Güncelleme"
+          
         ]
       },
     ]
   },
   Web: {
-    title: "WEB GELİŞTİRME VE E-TİCARET PAKETLERİ",
+    title: "WEB GELİŞTİRME PAKETLERİ",
     cards: [
       {
-        type: "Giriş",
+        type: "Başlangıç",
         price: "5.000₺",
         features: [
-          "React / Next.js ile kurumsal mini web sitesi",
-          "Performans odaklı web tasarımı & SEO altyapısı",
-          "Mobil uyumlu (Responsive) hızlı arayüz",
-          "1 haftalık destek",
-          "Hosting & Domain yönlendirme danışmanlığı"
+          "Tek Sayfa (Landing Page)",
+          "Mobil & Tablet Uyumlu",
+          "Whatsapp & Harita Entegrasyonu",
+          "Temel SEO & Google Kaydı",
+          "Hızlı Kurulum & SSL Sertifikası"
         ]
       },
       {
         type: "Profesyonel",
-        price: "8.000₺",
+        price: "8.500₺",
         features: [
-          "Next.js / React ön yüz + Python Django backend",
-          "Özel web tabanlı yönetim paneli geliştirme",
-          "Dinamik içerik yönetimi (Blog, Hizmetler, Formlar)",
-          "Gelişmiş SEO & arama motoru optimizasyonu",
-          "Python Django API entegrasyonu",
-          "1 ay teknik destek"
+          "5 sayfaya Kadar Özel Tasarım",
+          "Dinamik  Yönetim Paneli",
+          "Duyuru & Kampanya Modülü",
+          "Teklif Formu & İletişim Modülü",
+          "Kurumsal E-posta Desteği"
         ],
         highlight: true
       },
       {
-        type: "Üst",
-        price: "10.000₺",
+        type: "Gelişmiş",
+        price: "14.000₺",
         features: [
-          "Özel e-ticaret altyapısı hazırlatma & web yazılımı",
-          "Next.js SSG/SSR + Python Django mikroservis backend",
-          "Ödeme sistemleri & sanal pos entegrasyonları",
-          "Çoklu dil & Dashboard analitik grafikleri",
-          "Yüksek trafik uyumlu kurumsal premium tasarım",
-          "3 ay profesyonel destek"
+          "Online Randevu & Rezervasyon Sistemi",
+          "Detaylı Hizmet / Ürün Kataloğu",
+          "Çok Dilli (TR / EN) Altyapı",
+          "Müşteri Talep Modülü",
+          "Öncelikli Teknik Destek"
         ]
       },
     ]
   },
   Masaüstü: {
-    title: "MASAÜSTÜ VE İŞ OTOMASYONU PAKETLERİ",
-    cards: [
-      {
-        type: "Giriş",
-        price: "4.500₺",
-        features: [
-          "Özel masaüstü yazılımı geliştirme",
-          "Veri okuma / yazma & temel form ekranları",
-          "Offline çalışma & yerel veritabanı desteği",
-          "İş süreçleri optimizasyonu",
-          "1 hafta destek"
-        ]
-      },
-      {
-        type: "Profesyonel",
-        price: "7.500₺",
-        features: [
-          "İşletmeler için otomasyon yazılımları",
-          "C# / .NET / Python masaüstü uygulama çözümleri",
-          "Python Django web/cloud veritabanı senkronizasyonu",
-          "Kullanıcı roller ve gelişmiş raporlama modülü",
-          "1 ay teknik destek"
-        ],
-        highlight: true
-      },
-      {
-        type: "Üst",
-        price: "11.000₺",
-        features: [
-          "Masaüstü ERP / CRM yazılımı yaptırma",
-          "Gerçek zamanlı canlı veri & IoT cihaz entegrasyonu",
-          "Grafik + Yönetici Dashboard paneli",
-          "Departmanlar arası tam süreç optimizasyonu",
-          "3 ay profesyonel teknik destek"
-        ]
-      }
-    ]
-  }
+  title: "Windows Masaüstü Yazılım Paketleri",
+
+  cards: [
+    {
+      type: "Başlangıç",
+      price: "5.000 ₺",
+      features: [
+        "Excel / CSV Otomatik Veri Aktarımı",
+        "Tek Tıkla Kurumsal PDF Rapor & Fatura",
+        "Hızlı & Kurulumsuz Çalışma",
+        "Güvenli Yerel SQLite Veri Tabanı",
+        "Modern Koyu Tema Arayüzü"
+      ]
+    },
+    {
+      type: "Profesyonel",
+      price: "8.000 ₺",
+      features: [
+        "Kasa Giriş-Çıkış & Gelir-Gider Takibi",
+        "Müşteri & Tedarikçi Borç/Alacak Defteri",
+        "Otomatik Aylık Kâr-Zarar Özet Kartları",
+        "Excel ve PDF Dışa Aktarma (Export)",
+        "Kolay & Pratik Veri Giriş Ekranı"
+      ],
+      highlight: true
+    },
+    {
+      type: "Gelişmiş",
+      price: "12.500 ₺",
+      features: [
+        "Tarih Aralıklı Detaylı Finansal Analiz",
+        "Gelişmiş Filtreleme & Toplu Veri Düzenleme",
+        "Otomatik Yerel Yedekleme & Geri Yükleme",
+        "Şirket Logolu Özel Rapor Şablonları",
+        "Kapsamlı Arşivleme & Teknik Destek"
+      ]
+    }
+  ]
+}
 };
 
 type PackageType = 'Mobil' | 'Web' | 'Masaüstü';
