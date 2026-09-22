@@ -106,7 +106,7 @@ const packagesData = {
         "Kasa Giriş-Çıkış & Gelir-Gider Takibi",
         "Müşteri & Tedarikçi Borç/Alacak Defteri",
         "Otomatik Aylık Kâr-Zarar Özet Kartları",
-        "Excel ve PDF Dışa Aktarma (Export)",
+         "Excel ve PDF Dışa Aktarma (Export)",
         "Kolay & Pratik Veri Giriş Ekranı"
       ],
       highlight: true
